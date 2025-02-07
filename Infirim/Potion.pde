@@ -1,0 +1,1 @@
+class potion extends item{}
