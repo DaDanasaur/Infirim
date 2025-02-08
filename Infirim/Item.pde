@@ -7,7 +7,7 @@ item(){}
 void move(being r){
 kspeed=0;
 if(r instanceof player){ 
-direction = atan2((( mouseY - y)) , ((mouseX - x)));}
+direction = atan2((( adjustedMouseY - y)) , ((adjustedMouseX - x)));}
 else{direction = (atan2((( you.y - y)) , ((you.x - x))));}
         x =r.x+20*cos(direction);
         y =r.y+20*sin(direction);

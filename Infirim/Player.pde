@@ -16,6 +16,7 @@ inv[1]=new sword();
 arrowCount=10;}
 
 void run(){
+
 fill(250,200,200);
 super.display();
 move();
