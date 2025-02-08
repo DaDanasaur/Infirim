@@ -1,0 +1,1 @@
+class sword extends weapon{}

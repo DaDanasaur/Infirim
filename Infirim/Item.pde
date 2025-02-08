@@ -1,12 +1,14 @@
 class item{
-int direction;
+float direction;
 float y;
 float x;
 int kspeed;
 item(){}
-void move(player r){
+void move(being r){
 kspeed=0;
-direction = int(atan2((( mouseY - y)) , ((mouseX - x))));
+if(r instanceof player){ 
+direction = atan2((( mouseY - y)) , ((mouseX - x)));}
+else{direction = (atan2((( you.y - y)) , ((you.x - x))));}
         x =r.x+20*cos(direction);
         y =r.y+20*sin(direction);
       
@@ -18,4 +20,6 @@ direction = int(atan2((( mouseY - y)) , ((mouseX - x))));
         
         
 //at the end of move
-}}
+}
+void display(){}
+void attack(){}}

@@ -1,1 +1,3 @@
-class weapon extends item{}
+class weapon extends item{
+void attack(){}
+}

@@ -3,15 +3,20 @@ float speed;
 int x;
 int y;
 int t;
-int direction = 1;
+float direction = 1;
 int maxhp;
 int hp;
 int level = 1;
+int r = 20;
+boolean udead;
+item[] inv;
 being(int sp){
+  inv=new item[20];
   speed=sp;}
 
-being(){}
-
+being(){
+beings.add(this);}
+void run(){}
 
 void move(){
   float sped = speed;
@@ -27,9 +32,6 @@ void sprint(){
 }
 
 void display(){
-  if(t == 0){
-    fill(0,0,255);}
-    else{fill(255,0,0);}
     stroke(1);
   circle(x,y,40);
   fill(255);
