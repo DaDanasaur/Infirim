@@ -5,7 +5,7 @@ class wild extends place {
   float[][] terrain;
   int terrainWidth = 10000; // Width of the terrain in blocks
   int terrainHeight = 10000; // Height of the terrain in blocks
-  int blockSize = 20; // Size of each block
+  int blockSize = 40; // Size of each block
   float noiseScale = 0.05f; // Noise scale for terrain generation
   PGraphics terrainCache; // To cache the rendered terrain
 
@@ -25,11 +25,11 @@ class wild extends place {
 
   void generate() {
     for (int i = 0; i < caves.size(); i++) {
-      PVector randV = new PVector(random(0, 10000), random(0, 2100));
+      PVector randV = new PVector(random(0, 10000), random(0, 10000));
       caves.set(i, randV);
     }
     for (int i = 0; i < cities.size(); i++) {
-      PVector randV = new PVector(random(0, 10000), random(-1200, 2100));
+      PVector randV = new PVector(random(0, 10000), random(0, 10000));
       cities.set(i, randV);
     }
 
