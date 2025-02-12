@@ -26,7 +26,7 @@ void run(){}
       x += speed;
     } else if (direction == 270 && y < 10000 * blockSize) { // Move down
       y += speed;
-    } else if (direction == 180 && x > 0) { // Move left
+    } else if (direction == 180 && x > -10000) { // Move left
       x -= speed;
     }
   }

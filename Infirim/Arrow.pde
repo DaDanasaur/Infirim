@@ -21,7 +21,7 @@ class arrow extends item{
      for(being b: beings){if (b !=null){ if(circleCircleIntersect(b,this)== true){active = false;
      b.hp-=power; power=0;
    }}}}
-   if(x>0 && x< width && y >0 && y < height ){
+   if(x>-10000 && x< 10000 && y >-10000 && y < 10000 ){
 active = true;}else{active = false;}
     }
   void display(){

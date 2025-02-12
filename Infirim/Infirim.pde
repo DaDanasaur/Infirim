@@ -9,6 +9,7 @@ skeleton skell;
 ArrayList<arrow> arrows;
 ArrayList<being> beings;
 boolean dead=false;
+wild wilds;
 void setup(){
 beings = new ArrayList<being>();
   shapeMode(CENTER);
@@ -17,31 +18,12 @@ skelly=new skeleton(2);
 skell=new skeleton(1);
 size(1500,1500);
 arrows = new ArrayList<arrow>();
+wilds = new wild(100,10);
+wilds.generate();
 }
 void draw() {
   if (!dead) {
-    background(135, 206, 235); // Sky color
-
-    // Camera translation
-    translate(width / 2 - you.x, height / 2 - you.y);
-
-    // Generate and display terrain
-    for (int x = you.x / blockSize - 50; x <= you.x / blockSize + 50; x++) {
-      for (int y = you.y / blockSize - 50; y <= you.y / blockSize + 50; y++) {
-        float noiseValue = noise(x * noiseScale, y * noiseScale);
-        float terrainHeight = noiseValue * height;
-
-        // Choose a color based on terrain height
-        if (terrainHeight > height) {
-          fill(34, 139, 34); // Darker green for higher terrain
-        } else {
-          fill(50, 205, 50); // Lighter green for lower terrain
-        }
-
-        // Draw terrain block
-        rect(x * blockSize, height - terrainHeight, blockSize, terrainHeight);
-      }
-    }
+    wilds.display();
     
   adjustedMouseX = mouseX + you.x - width / 2;
   adjustedMouseY = mouseY + you.y - height / 2;
