@@ -1,7 +1,6 @@
 
 class bow extends weapon {
   int shotspeed;
-  int power;
  
     bow(int spr, int str) {
     power = str;

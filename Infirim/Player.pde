@@ -12,7 +12,7 @@ maxhp=level*10+40;
 hp=level*10+40;
 inv = new item[10];
 inv[0]=new bow(int(10+level*.15),7+level);
-inv[1]=new sword();
+inv[1]=new sword(40,10);
 arrowCount=10;}
 
 void run(){
