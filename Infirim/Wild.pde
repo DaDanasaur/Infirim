@@ -8,11 +8,11 @@ PVector v= new PVector(0,0);
 cities = new ArrayList<PVector>(city);
   for (int i=0;i<city;i++){cities.add(v);}}
 void generate(){
-  for (int i=0;i==caves.size();i++){
-  PVector randV = new PVector(random(-1000,1000),random(-1000,1000));
+  for (int i=0;i<caves.size();i++){
+  PVector randV = new PVector(random(-10000,10000),random(-1200,2100));
   caves.set(i, randV);}
-  for (int i=0;i==cities.size();i++){
-  PVector randV = new PVector(random(-1000,1000),random(-1000,1000));
+  for (int i=0;i<cities.size();i++){
+  PVector randV = new PVector(random(-10000,10000),random(-1200,2100));
   cities.set(i, randV);
 print(randV.x);}
 }
@@ -24,30 +24,29 @@ void display(){
 
     // Generate and display terrain
     for (int x = you.x / blockSize - 50; x <= you.x / blockSize + 50; x++) {
-      for (int y = you.y / blockSize - 50; y <= you.y / blockSize + 50; y++) {
+      for (int y = you.y / blockSize - 100; y <= you.y / blockSize + 50; y++) {
         float noiseValue = noise(x * noiseScale, y * noiseScale);
         float terrainHeight = noiseValue * height;
 
         // Choose a color based on terrain height
-        if (terrainHeight > height) {
+        if (terrainHeight > height/2) {
           fill(34, 139, 34); // Darker green for higher terrain
         } else {
           fill(50, 205, 50); // Lighter green for lower terrain
         }
 
         // Draw terrain block
-        rect(x * blockSize, height - terrainHeight, blockSize, terrainHeight);
+        rect(x * blockSize, height - terrainHeight, blockSize, terrainHeight*3);
       }
     }
-    for (int i=0;i==caves.size();i++){
+    for (int i=0;i<caves.size();i++){
   PVector V = caves.get(i);
   fill(0);
-  circle(V.x,V.y,200);}
-   for (int i=0;i==cities.size();i++){
-  PVector V = caves.get(i);
+  circle(V.x,V.y,100);}
+   for (int i=0;i<cities.size();i++){
+  PVector V = cities.get(i);
   fill(100,200,0);
   circle(V.x,V.y,200);}
-    print(caves.size());
 }
 
 }

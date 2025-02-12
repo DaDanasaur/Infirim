@@ -1,8 +1,8 @@
 //Dan Fun Project infirim
 float adjustedMouseX;
 float adjustedMouseY;
-int blockSize = 200;
-float noiseScale = 3;
+int blockSize = 400;
+float noiseScale = 10;
 player you;
 skeleton skelly;
 skeleton skell;
@@ -18,7 +18,7 @@ skelly=new skeleton(2);
 skell=new skeleton(1);
 size(1500,1500);
 arrows = new ArrayList<arrow>();
-wilds = new wild(100,10);
+wilds = new wild(40,15);
 wilds.generate();
 }
 void draw() {
@@ -88,7 +88,8 @@ size(1000,1000);
 arrows = new ArrayList<arrow>();
 dead = false;}}
 if (key=='1'){you.drawn = false;}
-if (key=='2'){you.drawn = true;}} 
+if (key=='2'){you.drawn = true;}
+if (key=='p'){print(you.y);}} 
  
  boolean circleCircleIntersect(being p, arrow a) {
   if (dist(p.x, p.y, a.x, a.y) < a.r+p.r) {

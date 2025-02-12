@@ -20,11 +20,11 @@ void run(){}
 
   void move() {
     // Move based on direction
-    if (direction == 90 && y > 0) { // Move up
+    if (direction == 90 && y > -1300) { // Move up
       y -= speed;
     } else if (direction == 0 && x < 10000 * blockSize) { // Move right
       x += speed;
-    } else if (direction == 270 && y < 10000 * blockSize) { // Move down
+    } else if (direction == 270 && y < 2200 * blockSize) { // Move down
       y += speed;
     } else if (direction == 180 && x > -10000) { // Move left
       x -= speed;
