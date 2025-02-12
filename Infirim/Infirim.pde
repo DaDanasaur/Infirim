@@ -16,13 +16,13 @@ beings = new ArrayList<being>();
 you = new player();
 skelly=new skeleton(2);
 skell=new skeleton(1);
-size(1500,1500);
+size(1600,1600);
 arrows = new ArrayList<arrow>();
 wilds = new wild(40,15);
 wilds.generate();
 }
 void draw() {
-  if (!dead) {
+  if (!dead) { 
     wilds.display();
     
   adjustedMouseX = mouseX + you.x - width / 2;
@@ -32,8 +32,12 @@ void draw() {
       being b = beings.get(i);
 
       if (b != null) {
+        
         b.run();
-
+      if (b instanceof enemy){
+      b.inv[0].move(b);
+      b.inv[0].display();}
+    
         // Set beings to null if they are dead
         if (b.udead == true) {
           if (b instanceof enemy) {
@@ -51,15 +55,7 @@ void draw() {
       you.inv[0].display();
     }
 
-    if (!skelly.udead) {
-      skelly.inv[0].move(skelly);
-      skelly.inv[0].display();
-    }
-
-    if (!skell.udead) {
-      skell.inv[0].move(skell);
-      skell.inv[0].display();
-    }
+  
 
     for (int i = arrows.size() - 1; i >= 0; i--) {
       arrow a = arrows.get(i);
@@ -89,7 +85,7 @@ arrows = new ArrayList<arrow>();
 dead = false;}}
 if (key=='1'){you.drawn = false;}
 if (key=='2'){you.drawn = true;}
-if (key=='p'){print(you.y);}} 
+if (key=='p'){print(you.x);}} 
  
  boolean circleCircleIntersect(being p, arrow a) {
   if (dist(p.x, p.y, a.x, a.y) < a.r+p.r) {

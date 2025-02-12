@@ -27,7 +27,7 @@ if(hp<=0){
   fill(255);
   textSize(100);
   textAlign(CENTER);
-  text("You died", height/2, width/2 );
+  text("You died", x,y);
   dead=true;
 }else if(hp < maxhp){if (frameCount % 60 == 0){hp+=maxhp*.02;}}
 }
