@@ -24,7 +24,10 @@ wilds.generate();
 void draw() {
   if (!dead) { 
     wilds.display();
-    
+fill(255);
+    textSize(20);
+    text("Arrows: " + you.arrowCount, you.x-width/2+10,you.y-height/2+ 30); // Display arrow count
+    text("X: " + nf(you.x, 1, 2) + ", Y: " + nf(you.y, 1, 2),  you.x-width/2+10,you.y-height/2+ 60); 
   adjustedMouseX = mouseX + you.x - width / 2;
   adjustedMouseY = mouseY + you.y - height / 2;
 
@@ -66,6 +69,7 @@ void draw() {
       if (!a.active) {
         arrows.remove(i);
       }
+
     }
   }
 }
@@ -80,7 +84,6 @@ void draw() {
 you = new player();
 skelly=new skeleton(5);
 skell=new skeleton(1);
-size(1000,1000);
 arrows = new ArrayList<arrow>();
 dead = false;}}
 if (key=='1'){you.drawn = false;}
