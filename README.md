@@ -1,4 +1,5 @@
 What I need to work on:
+ 1 - Fix Sword rotation and remove gridlines
  1 - Working inventory button
  2 - Working EXP/Levels System
  3 - Working Caves/Cave room generation and Boss generation
