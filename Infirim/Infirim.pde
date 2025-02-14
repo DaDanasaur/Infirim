@@ -106,3 +106,8 @@ you.hit();}
     return false;
   }
 }
+void swapItems(item[] array1,int index1,item[] array2, int index2) {
+    item temp = array1[index1];
+    array1[index1] = array2[index2];
+    array2[index2] = temp;
+}
