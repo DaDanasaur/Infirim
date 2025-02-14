@@ -11,9 +11,9 @@ void display() {
     pushMatrix();
     translate(x, y);
     if (isAttacking) {
-      rotate(direction);
+      rotate(direction+attackAngle);
     } else {
-      rotate(attackAngle);
+      rotate(direction+3*PI/4);
     }
     // Draw sword at the current position
     fill(139, 69, 19); // Brown color for the handle
