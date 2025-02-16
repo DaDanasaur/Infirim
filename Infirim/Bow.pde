@@ -1,10 +1,10 @@
 
 class bow extends weapon {
-  int shotspeed;
  
     bow(int spr, int str) {
     power = str;
-  shotspeed = spr;}
+  shotspeed = spr;
+   name = "Bow";}
 void display() {
     drawBow(); // Draw the bow
   }

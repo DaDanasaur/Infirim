@@ -20,8 +20,11 @@ if (x <= 0){direction = 0;}else if(x >= width){direction=180;}else if (frameCoun
   float randomDirection() {
     if(random(1) < 0.5){return 0;}else{return 180;}   }
 void die(){
+  super.die();
 if (hp <= 0){you.arrowCount+=10;
-udead=true;}} 
+udead=true;
+inven.loot = new item [1];
+inven.loot[0] = inv[0];}} 
 void run(){display();
 super.display();
 move();

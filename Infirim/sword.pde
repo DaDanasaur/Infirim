@@ -1,12 +1,12 @@
 class sword extends weapon{
-int range;
 int speed;
   int attackDuration = 1;
   int attackCounter = 0;
   float attackAngle = 0;
     sword(int ran, int str) {
     power = str;
-  range = ran;}
+  range = ran;
+  name = "Sword";}
 void display() {
     pushMatrix();
     translate(x, y);

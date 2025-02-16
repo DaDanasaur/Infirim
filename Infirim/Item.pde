@@ -3,6 +3,11 @@ float direction;
 float y;
 float x;
 int kspeed;
+String name;
+int power;
+int level;
+int shotspeed;
+int range;
 item(){}
 void move(being r){
 kspeed=0;
