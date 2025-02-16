@@ -77,4 +77,11 @@ class wild extends place {
       }
     }
   }
+void enterCave(){
+// check if in cave circle
+// if in cave eliminate all the beings other than you
+// remove cave from caves
+// creae new cave with X and Y of the players current x and y
+// make in place be true for the cave and false for inwilds;
+}
 }

@@ -1,5 +1,6 @@
 class inventory extends place{
 boolean looting = false;
+item[] loot;
 inventory(){
 inplace = false;}
 
@@ -9,22 +10,22 @@ void display(){
 //display stats of items
 }//inventory
 
-void display(item[] loot){
+void display(item[] nuloot){
 looting = true;
-//make 8 boxes to the left and 2 two the right(new things)
+loot = nuloot;
+//make 8 boxes to the left and 2 two the right(loot)
 //display contents of boxes
 //display stats of items
 }//looting
-
 void run(){
 //see if two items are selected(add code to mouseclicked for selected to be a new array containing the indexes and arrays of the selected values)
 //see if you can swap the two items
 //if you can swap the items, swap them
 if (looting==true){
-//display the looting inventory
+display(loot);
 }
 else{
-//display the normal inventory
+display();
 }
 }
 }
