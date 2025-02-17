@@ -1,4 +1,5 @@
 inventory inven;
+ArrayList<Integer> selected;
 float adjustedMouseX;
 float adjustedMouseY;
 int blockSize = 400;
@@ -56,12 +57,13 @@ void draw() {
       }
 
       if (you.drawn == true) {
+        if (you.inv[1] != null){
         you.inv[1].move(you);
         you.inv[1].display();
-      } else {
+      }} else {if (you.inv[0] != null){
         you.inv[0].move(you);
         you.inv[0].display();
-      }
+      }}
 
       for (int i = arrows.size() - 1; i >= 0; i--) {
         arrow a = arrows.get(i);
