@@ -1,11 +1,11 @@
 What I need to work on:
- 1 - Fix Sword rotation and remove gridlines
- 1 - Working inventory button
- 2 - Working EXP/Levels System
- 3 - Working Caves/Cave room generation and Boss generation
- 4 - Looting enemies and cave exits
- 5 - Working cities
- 6 - Create Wolves and autospawn Wolves when in wilds
- 7 - Create Sling Weapon and Weapon rarities when getting loot
- 8 - Generate new land 
- 9 - Loading Screen
+ 1 - remove gridlines(tried, hard)
+ 1 - Working inventory button(make it work)(tried, sometimes works)
+ 2 - Working EXP/Levels System(not tried, around an hour)
+ 3 - Working Caves/Cave room generation and Boss generation(planned but not coded, I'd assume 2 hours+ and hard)
+ 4 - Looting enemies and cave exits(make it work and implement in caves)(not too far off, half an hour)
+ 5 - Working cities(not started, like 3 hours)
+ 6 - Create Wolves and autospawn Wolves when in wilds(not started, prob between 1-2 hours)
+ 7 - Create Sling Weapon and Weapon rarities when getting loot(very planned out but 0 implementation, could be half an hour or 5)
+ 8 - Generate new land(prob easy 5-10 mins but not tried)
+ 9 - Loading Screen(very ambitious, mabye half an hour, mabye never)
