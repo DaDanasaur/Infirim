@@ -116,11 +116,11 @@ class inventory extends place {
 
     // Check selection in loot
     for (int i = 0; i < loot.length; i++) {
-      float xRight = xOffsetRight + (i % 2) * (boxSize + 20); // 2 columns on the right
+      float xRight = xOffsetRight; // 2 columns on the right
       float yRight = yOffset + (i / 2) * (boxSize + 20); // Increase y for new rows
-      if (dist(mouseX, mouseY, xRight, yRight) < boxSize / 2) {
+      if (dist(mouseX, mouseY,xRight, yRight) < boxSize / 2) {
         selected.add(i+10);
-        return;
+        
       }
     }
   }
