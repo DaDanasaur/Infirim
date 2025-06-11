@@ -56,15 +56,10 @@ void draw() {
         }
       }
 
-      if (you.drawn == true) {
-        if (you.inv[1] != null){
-        you.inv[1].move(you);
-        you.inv[1].display();
-      }} else {if (you.inv[0] != null){
-        you.inv[0].move(you);
-        you.inv[0].display();
-      }}
-
+//      if (you.drawn == true) {        if (you.inv[1] != null){   you.inv[1].move(you);        you.inv[1].display();      }} else {if (you.inv[0] != null){        you.inv[0].move(you);        you.inv[0].display();
+//      }}
+if (you.inv[you.drawn] != null){
+you.inv[you.drawn].move(you); you.inv[you.drawn].display();}
       for (int i = arrows.size() - 1; i >= 0; i--) {
         arrow a = arrows.get(i);
         a.move();
@@ -109,10 +104,28 @@ void keyPressed() {
     }
   }
   if (key == '1') {
-    you.drawn = false;
+   you.drawn=0;
   }
   if (key == '2') {
-    you.drawn = true;
+  you.drawn=1;
+  }
+    if (key == '3') {
+  you.drawn=2;
+  }
+    if (key == '4') {
+  you.drawn=3;
+  }
+    if (key == '5') {
+  you.drawn=4;
+  }
+    if (key == '6') {
+  you.drawn=5;
+  }
+    if (key == '7') {
+  you.drawn=6;
+  }
+    if (key == '8') {
+  you.drawn=7;
   }
   if (key == 'p') {
     print(you.x);

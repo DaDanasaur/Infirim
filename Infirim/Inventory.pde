@@ -90,11 +90,11 @@ class inventory extends place {
       display();
     }
     if (selected.size() == 2){
-      if (selected.get(0)>10){
-        if (selected.get(1)>10){
-          swapItems(loot, selected.get(0)%10,loot,selected.get(1)%10);
-        }else {swapItems(loot, selected.get(0)%10, you.inv, selected.get(1)%10);}}
-        else if (selected.get(1)>10){ swapItems(you.inv,selected.get(0)%10, loot, selected.get(1)%10);}
+      if (selected.get(0)>7){
+        if (selected.get(1)>7){
+          swapItems(loot, selected.get(0)%8,loot,selected.get(1)%8);
+        }else {swapItems(loot, selected.get(0)%8, you.inv, selected.get(1));}}
+        else if (selected.get(1)>7){ swapItems(you.inv,selected.get(0), loot, selected.get(1)%8);}
         else{swapItems(you.inv,selected.get(0)%10, you.inv, selected.get(1)%10);}
         selected = new ArrayList<Integer>(2);
     }
@@ -119,7 +119,7 @@ class inventory extends place {
       float xRight = xOffsetRight; // 2 columns on the right
       float yRight = yOffset + (i / 2) * (boxSize + 20); // Increase y for new rows
       if (dist(mouseX, mouseY,xRight, yRight) < boxSize / 2) {
-        selected.add(i+10);
+        selected.add(i+8);
         
       }
     }

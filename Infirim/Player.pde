@@ -1,7 +1,7 @@
 class player extends being{
 int gold = 0;
 int xp = 0;
-boolean drawn = true;
+int drawn = 0;
 int arrowCount;
 player(){
   super();
@@ -31,11 +31,19 @@ if(hp<=0){
   dead=true;
 }else if(hp < maxhp){if (frameCount % 60 == 0){hp+=maxhp*.02;}}
 }
+//void hit(){
+//if (drawn == true){inv[1].attack();}
+//else if (arrowCount >= 1) {
+ //       inv[0].attack(); // Using the Bow when not drawn
+   //     arrowCount -= 1;
+    //  }
+    //}
 void hit(){
-if (drawn == true){inv[1].attack();}
-else if (arrowCount >= 1) {
-        inv[0].attack(); // Using the Bow when not drawn
-        arrowCount -= 1;
-      }
-    }
-  }
+  if (inv[drawn] instanceof weapon){
+  if (inv[drawn] instanceof bow){
+  if (arrowCount >= 1){
+  arrowCount-=1; 
+  inv[drawn].attack();}}
+  else{inv[drawn].attack();}}}
+
+}
