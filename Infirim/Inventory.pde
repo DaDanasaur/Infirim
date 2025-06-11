@@ -63,6 +63,7 @@ class inventory extends place {
       float yRight = yOffset + (i / 2) * (boxSize + 20); // Increase y for new rows
       rectMode(CENTER);
         fill(100);
+        if (loot[i] != null){if (loot[i].rarity==2){fill(0,0,200);} else if (loot[i].rarity==3){fill(200,0,200);}}
       rect(xRight, yRight, boxSize, boxSize);
       textAlign(CENTER, CENTER);
       if (loot[i] != null) {
