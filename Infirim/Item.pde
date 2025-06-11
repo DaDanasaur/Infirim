@@ -8,6 +8,11 @@ int power;
 int level;
 int shotspeed;
 int range;
+boolean Fast;
+boolean Slow;
+boolean poison;
+int cooldown;
+ int rarity;
 item(){}
 void move(being r){
 kspeed=0;

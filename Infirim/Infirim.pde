@@ -38,6 +38,7 @@ void draw() {
       text("Arrows: " + you.arrowCount, you.x - width / 2 + 10, you.y - height / 2 + 30); // Display arrow count
       text("X: " + nf(you.x, 1, 2) + ", Y: " + nf(you.y, 1, 2), you.x - width / 2 + 10, you.y - height / 2 + 60);
       text("xp: " + you.xp + "/" + (you.level*5+25),you.x-width/2+10, you.y - height / 2 + 90);
+      text("HP: " + you.hp + "/" + you.maxhp,you.x-width/2+10, you.y - height / 2 + 120);
 
       adjustedMouseX = mouseX + you.x - width / 2;
       adjustedMouseY = mouseY + you.y - height / 2;
@@ -180,3 +181,22 @@ void genNewSkelly(){
 beings.add(new skeleton(int(random(you.level, you.level +2))));}
 void genNewZombie(){
 beings.add(new zombie(int(random(you.level, you.level +2))));}
+String bowGenerator(){
+ int i=int(random(0,600));
+  if (i < 570){return "Bow";}
+  else if (i < 578){return "Good Bow";}
+  else if (i < 586){return "Stone Bow";}
+  else if (i < 594){return "Compound Bow";}
+  else if (i < 596){return "Silver Bow";}
+  else if (i < 597){return "Crossbow";}
+  else if (i < 598){return "Mongolian Bow";}
+  else {return "Poison Bow";}
+//common 95(bow)
+//rare 4(stone bow(*1.5 damage *.8 Shotspeed) good bow(*1.25 damage *1.25 shotspeed) compound bow(*1.1 damage *1.6 shotspeed))
+//epic 1(Mongolian bow(+2 speed *1.25 damage *1.25 shotspeed) Silver bow(*1.25 damage * 1.6 shotspeed) Poisoned bow(*1.25 damage, *1.25 shotspeed, poisoned affect) Crossbow(*3 damage * 2 shotspeed, 2 second shot cooldown, -2 speed))
+}
+void swordGenerator(){
+//common 95(sword)
+//rare 4(Sharpsword(*1.25 damage) Gold dagger(range*0+10,damage *1.5) Quarterstaff(range*2))
+//epic 1(Obsidian dagger(range*0+10, damage*2) Burning Sword(damage*1.25, inflicts fire for 3 seconds(5% hp, enemy becomes red) Golden Sword(1.5*damage) Stunning axe(stops movement for 1 second)))
+}

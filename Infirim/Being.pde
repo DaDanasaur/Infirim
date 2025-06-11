@@ -9,6 +9,7 @@ int hp;
 int level;
 int r = 20;
 boolean udead;
+int poisoned;
 item[] inv;
 being(int sp){
   inv=new item[20];
@@ -16,7 +17,8 @@ being(int sp){
 
 being(){
 beings.add(this);}
-void run(){}
+void run(){
+if(poisoned > 0){if (frameCount%60==0){hp-=.05*hp;poisoned-=1;}}}
 
   void move() {
     // Move based on direction

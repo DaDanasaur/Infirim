@@ -3,6 +3,7 @@ class arrow extends item{
   int r=3;
   int speed;
   int power;
+  boolean poison=false;
   boolean active = true;
   arrow(int c){
   count = c;}
@@ -13,13 +14,14 @@ class arrow extends item{
     x=b.x;
     y=b.y;
     power = b.power;
+    if (b.name == "Poison Bow"){poison=true;}
   }
   void move()  {  
     if (active== true)
      {x += speed * cos(direction);
         y += speed * sin(direction);
      for(being b: beings){if (b !=null){ if(circleCircleIntersect(b,this)== true){active = false;
-     b.hp-=power; power=0;
+     b.hp-=power; power=0; if (poison==true){ b.poisoned+=4;}
    }}}}
    if(x>-10000 && x< 10000 && y >-10000 && y < 10000 ){
 active = true;}else{active = false;}

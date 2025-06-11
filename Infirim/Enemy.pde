@@ -26,7 +26,9 @@ void display(){
   text(level,x,y-40);
   fill(255,0,0);
 }
-void run(){display();
+void run(){
+  super.run();
+  display();
 super.display();
 move();
 die();}

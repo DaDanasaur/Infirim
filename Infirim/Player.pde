@@ -3,22 +3,26 @@ int gold = 0;
 int xp = 0;
 int drawn = 0;
 int arrowCount;
+int movespeed;
+int cooldown=0;
 player(){
 
   super();
   level=1;
 speed= 6;
+movespeed=6;
 x=width/2;
 y=height/2;
-maxhp=level*10+40;
-hp=level*10+40;
+maxhp=level*10+100;
+hp=maxhp;
 inv = new item[10];
-inv[0]=new bow(10,8);
+inv[0]=new bow(10,8, "bow");
 inv[1]=new sword(40,30);
 arrowCount=10;}
 
-void run(){
-
+void run(){ super.run();
+if (inv[drawn] != null){ if (inv[drawn].Fast ==true){speed=movespeed+2;}else if(inv[drawn].Slow==true){speed=movespeed-2;}
+else{speed=movespeed;}}
 fill(250,200,200);
 super.display();
 move();
@@ -32,7 +36,7 @@ if(hp<=0){
   textAlign(CENTER);
   text("You died", x,y);
   dead=true;
-}else if(hp < maxhp){if (frameCount % 60 == 0){hp+=maxhp*.02;}}
+}else if(hp < maxhp){if (frameCount % 60 == 0){hp+=maxhp*.02;if(cooldown>0){cooldown-=1;}}}
 }
 //void hit(){
 //if (drawn == true){inv[1].attack();}
@@ -42,11 +46,13 @@ if(hp<=0){
     //  }
     //}
 void hit(){
+  if(cooldown ==0){
   if (inv[drawn] instanceof weapon){
   if (inv[drawn] instanceof bow){
   if (arrowCount >= 1){
   arrowCount-=1; 
   inv[drawn].attack();}}
-  else{inv[drawn].attack();}}}
+  else{inv[drawn].attack();}
+cooldown+=inv[drawn].cooldown;}}}
 
 }
