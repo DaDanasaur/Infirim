@@ -13,7 +13,7 @@ int speed;
    if(name == "Golden Dagger"){power*=2;range=40; rarity=2;}
   if(name == "Obsidian Dagger"){power*=3.5;range=40; rarity=3;}
    if(name == "Smasher"){power*=2;range*=2; rarity=3; cooldown = 1; Slow= true;}
-    if(name == "Stuning Axe"){power*=1.5; rarity=3; stun=1; rarity = 3;}
+    if(name == "Stunning Axe"){power*=1.5; stun=1; rarity = 3;}
      if(name == "Flame Sword"){power*=1.5; rarity=3; poison=true;}
      if (name == "Rush Axe"){power*=1.5;range*=.5;Fast=true; rarity=3;}
  }

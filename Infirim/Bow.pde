@@ -31,7 +31,7 @@ void display() {
     float bowY2 = y + bowRadius * sin(TWO_PI + aim);
     // Draw the bow
     if(name == "Crossbow"){stroke(139,69,19); strokeWeight(5);
-     line(x,y,x+bowRadius*cos(aim),y+bowRadius*sin(aim));}
+     line(x,y,x+bowRadius*cos(direction),y+bowRadius*sin(direction));}
     noFill();
     stroke(0);
     if(name == "Stone Bow"){stroke(150);}
