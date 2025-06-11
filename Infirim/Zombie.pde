@@ -9,8 +9,9 @@ y = int(random(max(you.y-height/2,0),min(you.y+height/2,10000)));
 
 
 inv = new item[5];
-inv[0]= new sword(int(20+l*.15*random(2,4)+random(0,3)),int(30+l+.4*l*random(0,2)));
-speed=4;}
+inv[0]= new sword(int(20+l*.15*random(2,4)+random(0,3)),int(30+l+.4*l*random(0,2)),swordGenerator());
+speed=4;
+movespeed=4;}
 
 void display(){
 fill(0,255,0);
@@ -27,7 +28,7 @@ void die(){
   super.die();
   
 if (hp <= 0){
-you.xp+=level*4+5;
+you.xp+=level*3.5+3;
 udead=true;
 inven.loot = new item [1];
 inven.loot[0] = inv[0];}} 

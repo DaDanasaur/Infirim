@@ -17,7 +17,7 @@ maxhp=level*10+100;
 hp=maxhp;
 inv = new item[10];
 inv[0]=new bow(10,8, "bow");
-inv[1]=new sword(40,30);
+inv[1]=new sword(40,30, "Sword");
 arrowCount=10;}
 
 void run(){ super.run();
@@ -27,7 +27,7 @@ fill(250,200,200);
 super.display();
 move();
 die();
-if (5*level+25<=xp){level+=1; maxhp+=10; hp=maxhp; xp -= ((5*level-1)+25); }}
+if (8*level+25<=xp){level+=1; maxhp+=10; hp=maxhp; xp -= ((8*level-1)+25); }}
 void die(){
 if(hp<=0){
   background(0);

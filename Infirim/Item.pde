@@ -13,6 +13,7 @@ boolean Slow;
 boolean poison;
 int cooldown;
  int rarity;
+ int stun;
 item(){}
 void move(being r){
 kspeed=0;

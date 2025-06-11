@@ -13,7 +13,8 @@ inv[0]= new bow(int(10+l*.15*random(2,4)+random(0,3)),int(4+l+.1*l*random(0,2)),
 inv[1]= new arrow(10);
 if (inv[0].name == "Crossbow"){speed=1;}
 else if(inv[0].name == "Mongolian Bow"){speed=3;}
-else{speed=2;}}
+else{speed=2;}
+movespeed=2;}
 
 void display(){
 fill(255);
@@ -30,7 +31,7 @@ void die(){
   super.die();
   
 if (hp <= 0){you.arrowCount+=10;
-you.xp+=level*4+5;
+you.xp+=level*3+2;
 udead=true;
 inven.loot = new item [1];
 inven.loot[0] = inv[0];}} 

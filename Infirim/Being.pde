@@ -1,5 +1,6 @@
 class being{
 float speed;
+int movespeed;
 int x;
 int y;
 int t;
@@ -10,6 +11,7 @@ int level;
 int r = 20;
 boolean udead;
 int poisoned;
+int stunned;
 item[] inv;
 being(int sp){
   inv=new item[20];
@@ -18,7 +20,8 @@ being(int sp){
 being(){
 beings.add(this);}
 void run(){
-if(poisoned > 0){if (frameCount%60==0){hp-=.05*hp;poisoned-=1;}}}
+if(poisoned > 0){if (frameCount%60==0){hp-=.05*hp;poisoned-=1;}}
+if(stunned > 0){if (frameCount%60==0){stunned-=1; speed = 0;}}else{speed=movespeed;}}
 
   void move() {
     // Move based on direction

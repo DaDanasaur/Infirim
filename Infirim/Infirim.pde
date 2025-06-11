@@ -183,20 +183,26 @@ void genNewZombie(){
 beings.add(new zombie(int(random(you.level, you.level +2))));}
 String bowGenerator(){
  int i=int(random(0,600));
-  if (i < 570){return "Bow";}
-  else if (i < 578){return "Good Bow";}
-  else if (i < 586){return "Stone Bow";}
-  else if (i < 594){return "Compound Bow";}
-  else if (i < 596){return "Silver Bow";}
-  else if (i < 597){return "Crossbow";}
-  else if (i < 598){return "Mongolian Bow";}
+  if (i < 567){return "Bow";}
+  else if (i < 575){return "Good Bow";}
+  else if (i < 583){return "Stone Bow";}
+  else if (i < 591){return "Compound Bow";}
+  else if (i < 593){return "Silver Bow";}
+  else if (i < 595){return "Crossbow";}
+  else if (i < 597){return "Mongolian Bow";}
   else {return "Poison Bow";}
-//common 95(bow)
-//rare 4(stone bow(*1.5 damage *.8 Shotspeed) good bow(*1.25 damage *1.25 shotspeed) compound bow(*1.1 damage *1.6 shotspeed))
-//epic 1(Mongolian bow(+2 speed *1.25 damage *1.25 shotspeed) Silver bow(*1.25 damage * 1.6 shotspeed) Poisoned bow(*1.25 damage, *1.25 shotspeed, poisoned affect) Crossbow(*3 damage * 2 shotspeed, 2 second shot cooldown, -2 speed))
+
 }
-void swordGenerator(){
-//common 95(sword)
-//rare 4(Sharpsword(*1.25 damage) Gold dagger(range*0+10,damage *1.5) Quarterstaff(range*2))
-//epic 1(Obsidian dagger(range*0+10, damage*2) Burning Sword(damage*1.25, inflicts fire for 3 seconds(5% hp, enemy becomes red) Golden Sword(1.5*damage) Stunning axe(stops movement for 1 second)))
+String swordGenerator(){
+ int i=int(random(0,600));
+  if (i < 500){return "Sword";}
+  else if (i < 530){return "Quarterstaff";}
+  else if (i < 550){return "Sharp Sword";}
+  else if (i < 570){return "Golden Dagger";}
+  else if (i < 575){return "Smasher";}
+  else if (i < 580){return "Obsidian Dagger";}
+  else if (i < 585){return "Stunning Axe";}
+  else if (i < 590){return "Rush Axe";}
+  else {return "Flame Sword";}
+
 }
