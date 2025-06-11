@@ -12,7 +12,7 @@ udead=true;
 inven.looting=true;
 inven.inplace=true;}}
 void display(){
-  if (this instanceof skeleton){fill(255);}else if(this instanceof zombie){fill(0,0,200);}
+  if (this instanceof skeleton){fill(255);}else if(this instanceof zombie){fill(0,200,0);}
     stroke(1);
   circle(x,y,40);
   fill(255);
