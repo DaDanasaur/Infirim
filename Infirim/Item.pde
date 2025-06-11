@@ -27,4 +27,5 @@ else{direction = (atan2((( you.y - y)) , ((you.x - x))));}
 //at the end of move
 }
 void display(){}
-void attack(){}}
+void attack(){}
+void attack2(){}}

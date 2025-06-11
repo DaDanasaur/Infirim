@@ -6,7 +6,7 @@ int t;
 float direction = 1;
 int maxhp;
 int hp;
-int level = 1;
+int level;
 int r = 20;
 boolean udead;
 item[] inv;
@@ -46,7 +46,10 @@ void display(){
   stroke(0);
   rect(x,y-25,20*hp/maxhp,8);
   stroke(1);
-
+  textMode(CENTER);
+  fill(255,255,0);
+  text(level,x,y-40);
+  fill(255,0,0);
 }
 
 

@@ -4,15 +4,17 @@ int xp = 0;
 int drawn = 0;
 int arrowCount;
 player(){
+
   super();
+  level=1;
 speed= 6;
 x=width/2;
 y=height/2;
 maxhp=level*10+40;
 hp=level*10+40;
 inv = new item[10];
-inv[0]=new bow(int(10+level*.15),7+level);
-inv[1]=new sword(40,10);
+inv[0]=new bow(10,8);
+inv[1]=new sword(40,30);
 arrowCount=10;}
 
 void run(){
@@ -20,7 +22,8 @@ void run(){
 fill(250,200,200);
 super.display();
 move();
-die();}
+die();
+if (5*level+25<=xp){level+=1; maxhp+=10; hp=maxhp; xp -= ((5*level-1)+25); }}
 void die(){
 if(hp<=0){
   background(0);

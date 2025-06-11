@@ -1,31 +1,32 @@
-class skeleton extends enemy{
-skeleton(int l){
+class zombie extends enemy{
+zombie(int l){
     super(l);
     level=l;
-hp=level*3;
+hp=level*5;
   maxhp= hp;
-
 x = int(random(max(you.x-width/2,0),min(you.x+width/2,10000)));
 y = int(random(max(you.y-height/2,0),min(you.y+height/2,10000)));
 
+
 inv = new item[5];
-inv[0]= new bow(int(10+l*.15*random(2,4)+random(0,3)),int(4+l+.1*l*random(0,2)));
-inv[1]= new arrow(10);
-speed=2;}
+inv[0]= new sword(int(20+l*.15*random(2,4)+random(0,3)),int(30+l+.4*l*random(0,2)));
+speed=4;}
 
 void display(){
-fill(255);
+fill(0,255,0);
 super.display();}
 void move(){
   super.move();
-if (x <= 0){direction = 0;}else if(x >= width){direction=180;}else if (frameCount %20 == 0){direction=randomDirection();} 
-  if (frameCount % 100 == 0){inv[0].attack();}}
+if (x-you.x>=inv[0].range){direction = 180;}else if(you.x-x >= inv[0].range){direction=0;}else if(you.y-y >= inv[0].range){direction=270;} 
+else if (y-you.y >= inv[0].range) {direction=90;}
+  if (frameCount % 100 == 0){
+  inv[0].attack2();}}
   float randomDirection() {
     if(random(1) < 0.5){return 0;}else{return 180;}   }
 void die(){
   super.die();
   
-if (hp <= 0){you.arrowCount+=10;
+if (hp <= 0){
 you.xp+=level*4+5;
 udead=true;
 inven.loot = new item [1];

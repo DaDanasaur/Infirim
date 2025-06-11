@@ -10,7 +10,22 @@ void die(){
 if (hp <= 0){
 udead=true;
 inven.looting=true;
-inven.inplace=true;}} 
+inven.inplace=true;}}
+void display(){
+    stroke(1);
+  circle(x,y,40);
+  fill(255);
+  rectMode(CENTER);
+  rect(x,y-25,20,10);
+  fill(255,0,0);
+  stroke(0);
+  rect(x,y-25,20*hp/maxhp,8);
+  stroke(1);
+  textMode(CENTER);
+  fill(255,255,0);
+  text(level,x,y-40);
+  fill(255,0,0);
+}
 void run(){display();
 super.display();
 move();

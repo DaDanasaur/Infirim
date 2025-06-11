@@ -34,7 +34,7 @@ void display() {
     update();
   }
 
-  @Override
+
   void attack() {
     isAttacking = true;
     attackCounter = 0;
@@ -44,7 +44,15 @@ void display() {
         if(circleCircleIntersect2(x,y,range+20.0,float(b.x),float(b.y),float(20)) == true && direction >= atan2(((b.x - y)) , ((b.y - x)))-45 && direction <= atan2(((b.x - y)) , ((b.y - x)))+45){
       b.hp-=power;}}
   }}
-  
+  void attack2() {
+    isAttacking = true;
+    attackCounter = 0;
+      for (int i = beings.size() - 1; i >= 0; i--) {
+      being b = beings.get(i);
+      if (b instanceof player){
+        if(circleCircleIntersect2(x,y,range+20.0,float(b.x),float(b.y),float(20)) == true && direction >= atan2(((b.x - y)) , ((b.y - x)))-45 && direction <= atan2(((b.x - y)) , ((b.y - x)))+45){
+      b.hp-=power;}}
+  }}  
   void update() {
     if (isAttacking) {
       attackCounter++;

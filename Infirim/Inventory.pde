@@ -32,11 +32,13 @@ class inventory extends place {
         text(you.inv[i].name, xLeft, yLeft);
         if (you.inv[i] instanceof weapon) {
           text(((weapon) you.inv[i]).power, xLeft - 80, yLeft + 80);
-          text(((weapon) you.inv[i]).level, xLeft, yLeft + 100);
+         text("P", xLeft - 80, yLeft + 40);
           if (you.inv[i] instanceof bow) {
             text(((bow) you.inv[i]).shotspeed, xLeft + 80, yLeft + 80);
+            text("S", xLeft + 80, yLeft + 40);
           } else {
             text(((weapon) you.inv[i]).range, xLeft + 80, yLeft + 80);
+            text("R", xLeft + 80, yLeft +40);
           }
         }
         you.inv[i].x = xLeft;
@@ -68,12 +70,14 @@ class inventory extends place {
         text(loot[i].name, xRight, yRight);
         if (loot[i] instanceof weapon) {
           text(((weapon) loot[i]).power, xRight - 80, yRight + 80);
-          text(((weapon) loot[i]).level, xRight, yRight + 100);
+          text("P", xRight-80, yRight+40);
           if (loot[i] instanceof bow) {
             text(((bow) loot[i]).shotspeed, xRight + 80, yRight + 80);
-          } else {
+        text("S", xRight + 80, yRight + 40);  
+        } else {
             text(((weapon) loot[i]).range, xRight + 80, yRight + 80);
-          }
+        text("R", xRight + 80, yRight + 40);  
+        }
         }
         loot[i].x = xRight;
         loot[i].y = yRight + 50;

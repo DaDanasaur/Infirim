@@ -23,16 +23,21 @@ void setup() {
   arrows = new ArrayList<arrow>();
   wilds = new wild(40, 15);
   wilds.generate();
+  wilds.inplace=true;
 }
 
 void draw() {
   if (!dead) {
     if (!inven.inplace) {
+      if (wilds.inplace == true){
       wilds.display();
+     if (frameCount % 900 == 0){genNewSkelly();genNewZombie();}}
       fill(255);
       textSize(20);
+      textAlign(LEFT);
       text("Arrows: " + you.arrowCount, you.x - width / 2 + 10, you.y - height / 2 + 30); // Display arrow count
       text("X: " + nf(you.x, 1, 2) + ", Y: " + nf(you.y, 1, 2), you.x - width / 2 + 10, you.y - height / 2 + 60);
+      text("xp: " + you.xp + "/" + (you.level*5+25),you.x-width/2+10, you.y - height / 2 + 90);
 
       adjustedMouseX = mouseX + you.x - width / 2;
       adjustedMouseY = mouseY + you.y - height / 2;
@@ -56,8 +61,7 @@ void draw() {
         }
       }
 
-//      if (you.drawn == true) {        if (you.inv[1] != null){   you.inv[1].move(you);        you.inv[1].display();      }} else {if (you.inv[0] != null){        you.inv[0].move(you);        you.inv[0].display();
-//      }}
+
 if (you.inv[you.drawn] != null){
 you.inv[you.drawn].move(you); you.inv[you.drawn].display();}
       for (int i = arrows.size() - 1; i >= 0; i--) {
@@ -101,7 +105,7 @@ void keyPressed() {
       skell = new skeleton(1);
       arrows = new ArrayList<arrow>();
       dead = false;
-    }
+    }  
   }
   if (key == '1') {
    you.drawn=0;
@@ -130,6 +134,9 @@ void keyPressed() {
   if (key == 'p') {
     print(you.x);
   }
+  if (key == 'g'){
+  genNewSkelly();
+genNewZombie();}
   if (key == 'e') {
     if (inven.inplace == true) {
       inven.inplace = false;
@@ -169,3 +176,7 @@ void swapItems(item[] array1, int index1, item[] array2, int index2) {
   array1[index1] = array2[index2];
   array2[index2] = temp;
 }
+void genNewSkelly(){
+beings.add(new skeleton(int(random(you.level, you.level +2))));}
+void genNewZombie(){
+beings.add(new zombie(int(random(you.level, you.level +2))));}
